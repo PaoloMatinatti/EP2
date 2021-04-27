@@ -1,6 +1,7 @@
 def lista_movimentos_possiveis (cartas,indice):
     lugar = cartas[indice]
     movimento=[]
+ #valor/numero
     if indice == 0:
         return movimento
     elif lugar[0] == cartas[indice-1][0] or lugar[1] ==cartas[indice-1][1] :
@@ -11,7 +12,8 @@ def lista_movimentos_possiveis (cartas,indice):
     elif len(lugar) == 3:
         if lugar[2] == cartas[indice-1][1]:
             movimento.append(1)
-
+    
+ #naipe
     if indice ==1 or indice ==2:
         return movimento
     elif lugar[0] == cartas[indice-3] or lugar[1] == cartas[indice-3][1]:
