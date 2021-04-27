@@ -35,7 +35,6 @@ def cria_baralho ():
     return baralho
 
 
-print(cria_baralho())
 
 
 
