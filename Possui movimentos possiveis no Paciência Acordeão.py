@@ -1,44 +1,38 @@
-def possui_movimentos_possiveis(movimento):
-    import random
-def cria_baralho ():
-    baralho= []
-    cartas= ['A','2','3','4','5','6','7','8','9','10','J','Q','K']
-    c=0
-    c2=0
-    c3=0
-    c4=0
-    i=0
-    caralos = True
-    while caralos:
-        if c <= 13 -1:
-            paus= cartas[c] + '♣'
-            baralho.append(paus)
-            c+=1
-            i+=1
-        if c2 <=13-1:
-            espadas= cartas[c2]+ '♠'
-            baralho.append(espadas)
-            c2+=1
-            i+=1
-        if c3 <=13-1:
-           copas= cartas[c3]+ '♥'
-           baralho.append(copas)
-           c3+=1
-           i+=1
-        if c4 <=13-1:
-            ouros= cartas[c4]+ '♦'
-            baralho.append(ouros)
-            c4+=1
-            i+=1
-        else:
-            caralos = False
-    random.shuffle(baralho)
-    return baralho
-        if cartas=='10':
-            if [2]=='♣' or [2]=='♠'and '♣' not in cartas:
-                return False
-            else:
-                return True        
-        else:
+def possui_movimentos_possiveis(baralho):
+    def lista_movimentos_possiveis (cartas,indice):
+        lugar = cartas[indice]
+        movimento=[]
+    #valor/numero
+        if indice == 0:
+            return movimento
+        elif lugar[0] == cartas[indice-1][0] or lugar[1] ==cartas[indice-1][1] :
+            movimento.append(1)
+        elif len(cartas[indice-1]) == 3:
+            if lugar[1] == cartas[indice-1][2]:
+                movimento.append(1)
+        elif len(lugar) == 3:
+            if lugar[2] == cartas[indice-1][1]:
+                movimento.append(1)
+        
+    #naipe
+        if indice ==1 or indice ==2:
+            return movimento
+        elif lugar[0] == cartas[indice-3] or lugar[1] == cartas[indice-3][1]:
+            movimento.append(3)
+            print(cartas[indice-3])
+        elif len(cartas[indice-3]) == 3:
+            if lugar[1] == cartas[indice-3][2]:
+                movimento.append(3)
+        elif len(lugar) == 3:
+            if lugar[2] == cartas[indice-3][1]:
+                movimento.append(3)
+            
+
+        return movimento
+
+    print(lista_movimentos_possiveis(['A♠', 'j♠', 'Q♠', 'k♠', '10♠'],4))
+    c = 0
+    while c < len(baralho):
+        movimento = lista_movimentos_possiveis(baralho, c)
+        if movimento != []:
             return True
-    
