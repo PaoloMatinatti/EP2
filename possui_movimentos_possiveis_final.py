@@ -8,3 +8,4 @@ def possui_movimentos_possiveis(baralho,indice):
             return True
         c += 1
     return False
+  
