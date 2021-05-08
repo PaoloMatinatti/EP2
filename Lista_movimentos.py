@@ -18,15 +18,11 @@ def lista_movimentos_possiveis (cartas,indice):
         return movimento
     elif lugar[0] == cartas[indice-3] or lugar[1] == cartas[indice-3][1]:
         movimento.append(3)
-        print(cartas[indice-3])
     elif len(cartas[indice-3]) == 3:
         if lugar[1] == cartas[indice-3][2]:
             movimento.append(3)
     elif len(lugar) == 3:
         if lugar[2] == cartas[indice-3][1]:
             movimento.append(3)
-        
-
     return movimento
 
-print(lista_movimentos_possiveis(['A♠', 'j♠', 'Q♠', 'k♠', '10♠'],4))
