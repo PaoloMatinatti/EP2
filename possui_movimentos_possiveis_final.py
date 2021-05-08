@@ -38,3 +38,4 @@ def possui_movimentos_possiveis(baralho):
             return True
         c += 1
     return False
+  
