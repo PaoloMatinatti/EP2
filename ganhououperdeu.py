@@ -1,11 +1,13 @@
-def jogo_3(baralho):
+def ganhou_ou_perdeu(baralho):
     if baralho > 1:
-        print("Você perdeu :(")
+        a='perdeu'
+        print("Você \033[031m{}".format(a))
         print(" ")
-        jogar_de_novo = str(input("Gostaria de jogar de novo? (digite s ou n): "))
+        jogar_de_novo = str(input("Quer de jogar de novo? (digite S ou N): "))
         return jogar_de_novo
     else:
-        print("Você ganhou!! :)")
+        b='Ganhou'
+        print("Você \033[32m{}".format(b))
         print(" ")
-        jogar_de_novo = str(input("Gostaria de jogar de novo? (digite s ou n): "))
+        jogar_de_novo = str(input("Quer de jogar de novo? (digite S ou N): "))
         return jogar_de_novo
