@@ -11,8 +11,9 @@ test=True
 while test:
     valor=int(input('Escolha uma carta (digite um número entre 1 e {}): '.format(len(baralho))))
     if valor >= 53:
-        print('carta invalida')
+        a= 'Inválida'
+        print('A carta é \033[31m{}\033[m'.format(a))
     else:
         carta=baralho[valor-1]
-        print(carta)
+        print('\033[32m{}\033[m'.format(carta))
     
