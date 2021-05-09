@@ -1,28 +1,29 @@
+import extrair_naipe
+import extrair_valor
+
+
 def lista_movimentos_possiveis (cartas,indice):
-    lugar = cartas[indice]
     movimento=[]
- #valor/numero
     if indice == 0:
         return movimento
-    elif lugar[0] == cartas[indice-1][0] or lugar[1] ==cartas[indice-1][1] :
-        movimento.append(1)
-    elif len(cartas[indice-1]) == 3:
-        if lugar[1] == cartas[indice-1][2]:
+    else:
+        valor= extrair_valor.extrai_valor(cartas[indice])
+        naipe= extrair_naipe.extrai_naipe(cartas[indice])
+        valorant= extrair_valor.extrai_valor(cartas[indice-1])
+        naipeant= extrair_naipe.extrai_naipe(cartas[indice-1])
+        valorterc= extrair_valor.extrai_valor(cartas[indice-3])
+        naipeterc= extrair_naipe.extrai_naipe(cartas[indice-3])
+        if (valor == valorant or naipe == naipeant) and (valor == valorterc or naipe == naipeterc):
             movimento.append(1)
-    elif len(lugar) == 3:
-        if lugar[2] == cartas[indice-1][1]:
+            movimento.append(3)
+            return movimento
+        elif valor == valorant or naipe == naipeant:
             movimento.append(1)
+            return movimento
+        elif valor == valorterc or naipe == naipeterc:
+            movimento.append(3)
+            return movimento
     
- #naipe
-    if indice ==1 or indice ==2:
-        return movimento
-    elif lugar[0] == cartas[indice-3] or lugar[1] == cartas[indice-3][1]:
-        movimento.append(3)
-    elif len(cartas[indice-3]) == 3:
-        if lugar[1] == cartas[indice-3][2]:
-            movimento.append(3)
-    elif len(lugar) == 3:
-        if lugar[2] == cartas[indice-3][1]:
-            movimento.append(3)
-    return movimento
+   
 
+print(lista_movimentos_possiveis(['6♥', 'J♥', '9♣', '9♥'],3))
