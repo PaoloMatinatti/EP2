@@ -10,4 +10,3 @@ def empilha (baralho,pi,pf):
 
     return baralho
 
-print(empilha(['6♥', 'J♥', '9♣', '9♥'],1,0))
