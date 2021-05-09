@@ -12,7 +12,7 @@ baralho = baralho.cria_baralho()
 while fim_do_jogo:
 
     baralho = movimentos.movimentos(baralho)
-    fim_do_jogo = ganhououperdeu.jogo_3(baralho)
+    fim_do_jogo = ganhououperdeu.ganhou_ou_perdeu(baralho)
     
     if fim_do_jogo == "s":
         fim_do_jogo == True

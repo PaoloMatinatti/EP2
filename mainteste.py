@@ -34,8 +34,8 @@ while possui_movimentos_possiveis_final.possui_movimentos_possiveis(baralho):
             elif i == 3:
                 baralho= Empilha.empilha(baralho,indice,indice-3)
                 print(len(baralho))
-            else:
-                print('movimento invalido')
+        else:
+            input('movimento invalido')
     
 
 

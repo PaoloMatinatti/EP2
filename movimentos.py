@@ -32,6 +32,8 @@ def movimentos(baralho):
                 elif i == 3:
                     baralho= Empilha.empilha(baralho,indice,indice-3)
                     print(len(baralho))
-                else:
-                    print('movimento invalido')
+            else:
+                c='Inválido'
+                d='ENTER'
+                input('O movimento é \033[031m{}\033[m, digite \033[034m{}\033[m para continuar...'.format(c,d))
     return baralho
