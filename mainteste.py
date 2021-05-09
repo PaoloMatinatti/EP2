@@ -35,4 +35,10 @@ while test:
            
 
             
+    if valor >= 53:
+        a= 'Inválida'
+        print('A carta é \033[31m{}\033[m'.format(a))
+    else:
+        carta=baralho[valor-1]
+        print('\033[32m{}\033[m'.format(carta))
     
