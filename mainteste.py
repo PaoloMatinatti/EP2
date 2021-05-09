@@ -10,10 +10,22 @@ print(imprimirbaralho.imprimir(baralho))
 while test:
     c=1
     valor=int(input('Escolha uma carta (digite um número entre 1 e {}): '.format(len(baralho))))
-    if valor > len(baralho)  :
-        print('carta invalida')
+    
+
+    if valor > len(baralho):
+        a='Inválida'
+        print('A carta é \033[31m{}\033[m'.format(a))
     else:
         carta=baralho[valor-1]
+        if carta[0]=='1':
+            if carta[2]=='♥':
+                print('\033[31m{}\033[m'.format(carta))
+
+        print('\033[32m{}\033[m'.format(carta))
+
+
+
+
     if possui_movimentos_possiveis_final.possui_movimentos_possiveis(baralho,valor) == True:
         if Lista_movimentos.lista_movimentos_possiveis(baralho,valor) == [1] :
             Empilha.empilha(baralho,valor,(valor-1))
@@ -31,14 +43,10 @@ while test:
             else:
                  Empilha.empilha(baralho,valor,(valor-3))
     elif possui_movimentos_possiveis_final.possui_movimentos_possiveis(baralho,valor)== False:
-        print('movimento invalido')
+        b='Inválida'
+        print('O movimento é \033[31m{}\033[m'.format(b))
            
 
             
-    if valor >= 53:
-        a= 'Inválida'
-        print('A carta é \033[31m{}\033[m'.format(a))
-    else:
-        carta=baralho[valor-1]
-        print('\033[32m{}\033[m'.format(carta))
+
     
