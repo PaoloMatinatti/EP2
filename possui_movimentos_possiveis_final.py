@@ -1,11 +1,17 @@
 import Lista_movimentos
 
-def possui_movimentos_possiveis(baralho,indice):
-    c = indice
+def possui_movimentos_possiveis(baralho):
+    c = 0
+    s=0
     while c < len(baralho):
-        movimento = Lista_movimentos.lista_movimentos_possiveis(baralho, c)
-        if movimento != []:
-            return True
+        movimento = Lista_movimentos(baralho, c)
+        if len(movimento) != 0:
+            s +=1
         c += 1
-    return False
+
+    if s !=0:
+        return True
+    else:       
+        return False
   
+    
