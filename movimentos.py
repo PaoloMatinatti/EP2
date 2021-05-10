@@ -19,21 +19,17 @@ def movimentos(baralho):
             print('2. {}'.format(baralho[indice-3]))
             esq= int(input('escolha ou 1 ou 2: '))
             if esq == 1:
-                baralho[indice-1] = baralho[indice]
-                del baralho[indice]
+                baralho= Empilha.empilha(baralho,indice,indice-1)
             elif esq == 2:
-                baralho[indice-3] = baralho[indice]
-                del baralho[indice]
-        else:
+               baralho= Empilha.empilha(baralho,indice,indice-3)
+        elif len(movimento) == 1:
             for i in movimento:
                 if i == 1:
                     baralho= Empilha.empilha(baralho,indice,indice-1)
-                    print(len(baralho))
                 elif i == 3:
                     baralho= Empilha.empilha(baralho,indice,indice-3)
-                    print(len(baralho))
-            else:
-                c='Inválido'
-                d='ENTER'
-                input('O movimento é \033[031m{}\033[m, digite \033[034m{}\033[m para continuar...'.format(c,d))
+        else:
+            c='Inválido'
+            d='ENTER'
+            input('O movimento é \033[031m{}\033[m, digite \033[034m{}\033[m para continuar...'.format(c,d))
     return baralho

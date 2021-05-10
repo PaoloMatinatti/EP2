@@ -1,65 +1,25 @@
 import extrair_naipe
 import extrair_valor
 
-def lista_movimentos_possiveis(baralho,ind):
-
-
-    naipe_carta = extrair_naipe.extrai_naipe(baralho[ind])
-
-    naipe_anterior = extrair_naipe.extrai_naipe(baralho[ind-1])
-
-    valor_carta = extrair_valor.extrai_valor(baralho[ind])
-
-    valor_anterior = extrair_valor.extrai_valor(baralho[ind-1])
-
-    if ind == 0:  
-
-        return []
-
-    elif ind < 3:
-
-        if naipe_carta == naipe_anterior or valor_carta == valor_anterior:
-
-            return [1]
-
-        else:
-
-            return []
-
-    elif ind >= 3:
-
-        naipe_terceiro = extrair_naipe.extrai_naipe(baralho[ind-3])
-
-        valor_terceiro = extrair_valor.extrai_valor(baralho[ind-3])
-
-        if valor_carta == valor_anterior and valor_carta == valor_terceiro:
-
-            return [1, 3]
-
-        elif naipe_carta == naipe_anterior and naipe_carta == naipe_terceiro:
-
-            return [1, 3]
-
-        elif valor_carta == valor_anterior and naipe_carta == naipe_terceiro:
-
-            return [1, 3]
-
-        elif naipe_carta == naipe_anterior and valor_carta == valor_terceiro:
-
-            return [1, 3]
-
-        elif naipe_carta == naipe_anterior or valor_carta == valor_anterior:
-
-            return [1]
-
-        elif valor_carta == valor_terceiro or naipe_carta == naipe_terceiro:
-
-            return [3]
-
-        else:
-
-            return []
-
+def lista_movimentos_possiveis (cartas,indice):
+    movimento=[]
+    if indice == 0:
+        return movimento
     else:
+        valor= extrair_valor.extrai_valor(cartas[indice])
+        naipe= extrair_naipe.extrai_naipe(cartas[indice])
+        valorant= extrair_valor.extrai_valor(cartas[indice-1])
+        naipeant= extrair_naipe.extrai_naipe(cartas[indice-1])
+        valorterc= extrair_valor.extrai_valor(cartas[indice-3])
+        naipeterc= extrair_naipe.extrai_naipe(cartas[indice-3])
+        if (valor == valorant or naipe == naipeant) and (valor == valorterc or naipe == naipeterc):
+            movimento.append(1)
+            movimento.append(3)
+            return movimento
+        elif valor == valorant or naipe == naipeant:
+            movimento.append(1)
+        elif valor == valorterc or naipe == naipeterc:
+            movimento.append(3)
+            return movimento
+    return movimento
 
-        return []

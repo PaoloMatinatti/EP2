@@ -4,8 +4,8 @@ def possui_movimentos_possiveis(baralho):
     c = 0
     s=0
     while c < len(baralho):
-        movimentos = Lista_movimentos.lista_movimentos_possiveis(baralho, c)
-        if len(movimentos) != 0:
+        movimento = Lista_movimentos.lista_movimentos_possiveis(baralho, c)
+        if len(movimento) != 0:
             s +=1
         c += 1
 
@@ -14,4 +14,3 @@ def possui_movimentos_possiveis(baralho):
     else:       
         return False
   
-    
