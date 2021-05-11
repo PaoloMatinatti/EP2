@@ -9,13 +9,13 @@ def ganhou_ou_perdeu(baralho):
         print(" ")
     tt= True
     while tt:
-        fim = input('deseja jogar novamente? (digite s ou  n): ')
-        if fim == 'n' :
+        fim = input('deseja jogar novamente? (digite s/S ou  n/N): ')
+        if fim == 'n' or 'N' :
             return False
             tt= False
-        elif fim == 's' :
+        elif fim == 's' or 'S' :
             return True
             tt= False
-        elif fim != 'n' and fim != 's' :
+        elif fim != 'n' or 'N' and fim != 's' or 'S' :
             print('movimento invalido')
    
