@@ -14,9 +14,9 @@ while fim_do_jogo:
     baralho = movimentos.movimentos(baralho)
     fim_do_jogo = ganhououperdeu.ganhou_ou_perdeu(baralho)
     
-    if fim_do_jogo == "s":
+    if fim_do_jogo == "s" or 'S':
         fim_do_jogo == True
         baralho = baralho.cria_baralho()
         
-    elif fim_do_jogo == "n":
+    elif fim_do_jogo == "n" or 'N': 
         fim_do_jogo == False
