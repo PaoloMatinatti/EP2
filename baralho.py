@@ -1,3 +1,5 @@
+#Funcao q recebe nada e volta um baralho de 52 cartas.
+
 import random
 def cria_baralho ():
     baralho= []

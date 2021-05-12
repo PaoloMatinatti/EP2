@@ -1,3 +1,4 @@
+#funcao que ve se o jogador ganhou ou perdeu.
 def ganhou_ou_perdeu(baralho):
     if len(baralho) > 1:
         a='perdeu'

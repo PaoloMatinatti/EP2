@@ -1,3 +1,5 @@
+#funcao que verifica se o movimento pode ou nao ser feito
+
 import Lista_movimentos
 
 def possui_movimentos_possiveis(baralho):

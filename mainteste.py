@@ -1,3 +1,5 @@
+#serviu como teste das funcoes 
+
 import baralho
 import Lista_movimentos
 import possui_movimentos_possiveis_final

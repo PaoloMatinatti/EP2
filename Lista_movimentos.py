@@ -1,3 +1,5 @@
+#funcao q verica qual movimento foi feito.
+
 import extrair_naipe
 import extrair_valor
 

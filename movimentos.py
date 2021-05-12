@@ -1,3 +1,5 @@
+#funcao que faz os movimentos no jogo
+
 import possui_movimentos_possiveis_final
 import Empilha
 import Lista_movimentos

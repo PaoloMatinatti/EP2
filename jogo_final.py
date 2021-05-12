@@ -1,3 +1,4 @@
+#jogo finalizado 
 import baralho
 import movimentos
 import ganhououperdeu

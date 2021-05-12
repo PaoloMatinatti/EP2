@@ -1,4 +1,4 @@
- #funcao q recebe um baralho posicao inicial(pi) e uma posicao de destino (pf)
+ #funcao q recebe um baralho posicao inicial(pi) e uma posicao de destino (pf).
 def empilha (baralho,pi,pf):
     
     variavel =True
