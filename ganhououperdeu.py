@@ -10,12 +10,12 @@ def ganhou_ou_perdeu(baralho):
     tt= True
     while tt:
         fim = input('deseja jogar novamente? (digite s/S ou  n/N): ')
-        if fim == 'n' or 'N' :
+        if fim == 'n' or fim == 'N' :
             return False
             tt= False
-        elif fim == 's' or 'S' :
+        elif fim == 's' or fim == 'S' :
             return True
             tt= False
-        elif fim != 'n' or 'N' and fim != 's' or 'S' :
+        elif fim != 'n' or fim!='N' and fim != 's' or fim != 'S' :
             print('movimento invalido')
    
